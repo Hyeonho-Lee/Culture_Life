@@ -10,8 +10,8 @@ url_2 = 'http://api.data.go.kr/openapi/tn_pubr_public_cltur_fstvl_api'
 path = ''
 
 def make_file():
-    #url_result = url + '?serviceKey=' + serviceKey + '&pageNo=' + str(pageNo) + '&numOfRows=' + str(numOfRows) + '&type=' + types
-    url_result = url_2 + '?serviceKey=' + serviceKey + '&pageNo=' + str(pageNo) + '&numOfRows=' + str(numOfRows) + '&type=' + types
+    url_result = url + '?serviceKey=' + serviceKey + '&pageNo=' + str(pageNo) + '&numOfRows=' + str(numOfRows) + '&type=' + types
+    #url_result = url_2 + '?serviceKey=' + serviceKey + '&pageNo=' + str(pageNo) + '&numOfRows=' + str(numOfRows) + '&type=' + types
 
     response = requests.get(url_result)
     response.encoding = 'UTF-8'
@@ -28,8 +28,9 @@ def make_file():
     with open(path, 'w') as file:
         json.dump(text, file, indent = 4, ensure_ascii = False)
 
-for i in range(1, 12):
+for i in range(1, 21):
     pageNo = i
-    path = '../json/Second_Data/data_' + str(pageNo) + '.json'
+    path = '../json/First_Data/data_' + str(pageNo) + '.json'
+    #path = '../json/Second_Data/data_' + str(pageNo) + '.json'
     make_file()
     print(str(pageNo) + '페이지를 저장하였습니다.')

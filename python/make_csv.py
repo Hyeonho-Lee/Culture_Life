@@ -204,4 +204,4 @@ for i in range(1, 21):
 
 
 data[start_date] = pd.to_datetime(data[start_date], format='%Y-%m-%d')
-data.to_csv("csv_data.csv", mode='w', encoding='utf-8-sig')
+data.to_csv("../csv/csv_data.csv", mode='w', encoding='utf-8-sig')
